@@ -1,0 +1,142 @@
+<template name="fileData">
+	<div class="col-50 sm-row">
+		<div itemscope="itemscope" itemtype="http://schema.org/Article" class="file">
+			<div class="invisible" itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
+			  <meta itemprop="name" content="Meteor Files"/>
+			  <picture itemprop="logo" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+			    <meta itemprop="caption" content="We code for Meteor Files"/>
+			    <meta itemprop="exifData" content="image/png"/>
+			    <link itemprop="contentUrl" content="https://veliovgroup.com/images/logo-social-1200x630.png" href="https://veliovgroup.com/images/logo-social-1200x630.png"/>
+			    <link itemprop="url" content="https://veliovgroup.com" href="https://veliovgroup.com"/>
+			    <meta itemprop="width" content="1200"/>
+			    <meta itemprop="height" content="630"/>
+			  </picture>
+			</div>
+			<link itemprop="url" content="{{urlCurrent}}" href="{{urlCurrent}}">
+    	<meta itemscope="itemscope" itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="{{urlCurrent}}">
+      <div class="invisible" itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person">
+      	<meta itemprop="name" content="User of Meteor Files">
+      </div>
+			{{#each file}}
+				<time class="invisible" itemprop="datePublished" datetime="{{DateToISO meta.created_at}}"></time>
+				<time class="invisible" itemprop="dateModified" datetime="{{DateToISO meta.created_at}}"></time>
+				<h4 class="invisible">Uploaded file: {{name}}</h4>
+				<p class="invisible" itemprop="description">View uploaded and shared file: {{name}}</p>
+				<div class="file-table">
+					<article class="file-row">
+						<h1 class="file-title ellipsis">
+							<a href="/" class="go-back">&lt;</a>&nbsp;
+							<span itemprop="name">
+								{{extless name}}
+							</span>
+						</h1>
+						{{#if isPDF}}
+							<div class="file-cell">
+								<iframe src="{{link}}" frameborder="0" class="file-preview"></iframe>
+							</div>
+						{{else if isImage}}
+							<picture class="file-preview" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+								<meta itemprop="caption" content="Meteor Files: Uploaded file: {{name}}">
+            		<meta itemprop="exifData" content="{{type}}">
+            		<link itemprop="contentUrl" href="{{link}}" content="{{link}}">
+            		<link itemprop="url" href="{{urlCurrent}}" content="{{urlCurrent}}">
+            		<meta itemprop="width" content="500">
+            		<meta itemprop="height" content="500">
+								<source srcset="{{link}}" type="{{type}}">
+								<img src="{{link}}" alt="{{name}}" class="file-preview"/>
+							</picture>
+						{{else if isAudio}}
+							<div class="file-cell">
+								{{#if showError}}
+									<h3 class="files-note">
+										Can not play this audio file. The "{{type}}" format may be not supported in your browser. Please <a title="Download File" href="{{link}}?download=true" download="{{name}}">download file</a>
+									</h3>
+								{{else}}
+									<audio class="file-preview file-audio" id="{{_id}}" controls autoplay preload="auto" playsinline="true" webkit-playsinline="true" loop>
+										<source src="{{link}}?play=true" type="{{type}}">
+									</audio>
+								{{/if}}
+							</div>
+						{{else if isVideo}}
+							<div class="file-cell">
+								{{#if showError}}
+									<h3 class="files-note">
+										Can not play this video. The "{{type}}" format may be not supported in your browser. Please <a title="Download File" href="{{link}}?download=true" download="{{name}}">download file</a>
+									</h3>
+								{{else}}
+									<video class="file-preview" id="{{_id}}" controls autoplay preload="auto" playsinline="true" webkit-playsinline="true" loop>
+										<source src="{{link}}?play=true" type="{{type}}">
+									</video>
+								{{/if}}
+							</div>
+						{{else}}
+							<div class="file-cell">
+								<h3 class="files-note">
+									Preview is not available, please <a title="Download File" href="{{link}}?download=true" download="{{name}}">download file</a>
+								</h3>
+							</div>
+						{{/if}}
+						{{#unless isImage}}
+							<picture itemprop="image" itemscope itemtype="http://schema.org/ImageObject" class="invisible">
+								<meta itemprop="caption" content="Upload, Store and Share files with speed of Meteor"/>
+								<meta itemprop="exifData" content="image/png"/>
+								<meta itemprop="width" content="1200"/>
+								<meta itemprop="height" content="630"/>
+							</picture>
+						{{/unless}}
+						{{#if showInfo}}
+							<div class="file-overlay">
+							  <table>
+							    <tbody>
+							      <tr>
+							        <td>
+							          <table class="fixed-table">
+							            <tbody>
+							              <tr>
+							                <th>Name:</th>
+							                <td>{{extless name}}</td>
+							              </tr>
+							              <tr>
+							                <th>Extension:</th>
+							                <td>
+							                	{{#if extension}}
+							                		.{{extension}}
+							                	{{else}}
+							                		extension-less
+							                	{{/if}}
+							                </td>
+							              </tr>
+							              <tr>
+							                <th>Mime-type:</th>
+							                <td>{{type}}</td>
+							              </tr>
+							              <tr>
+							                <th>Size:</th>
+							                <td>{{bytesToKb size}} kb</td>
+							              </tr>
+							            </tbody>
+							          </table>
+							        </td>
+							      </tr>
+							    </tbody>
+							  </table>
+							</div>
+						{{/if}}
+						<a id="data-show-info" href="#" class="info-link show-info {{#if showInfo}}active{{/if}}">
+							{{#if showInfo}}
+								<i class="fa fa-fw fa-times"></i>
+							{{else}}
+								<i class="fa fa-fw fa-info-circle"></i>
+							{{/if}}
+						</a>
+						{{#unless showInfo}}
+							<a class="info-link right download-file" title="Download File" href="{{link}}?download=true" target="_parent" download="{{name}}">
+								<i class="fa fa-fw fa-download"></i>
+							</a>
+						{{/unless}}
+					</article>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+</template>

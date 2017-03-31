@@ -1,0 +1,35 @@
+<template name="fileList">
+	<tr style="color: #aebad2;">
+		<td class="width-1 preview">
+			<div class="preview-circle">
+				{{# if isPDF }}
+					<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+				{{else if isAudio}}
+					<i class="fa fa-music" aria-hidden="true"></i>
+				{{else if isVideo}}
+					<i class="fa fa-video-camera" aria-hidden="true"></i>
+				{{else if isImage}}
+					<i class="fa fa-picture-o" aria-hidden="true"></i>
+				{{else if isText}}
+					<i class="fa fa-file-text-o" aria-hidden="true"></i>
+				{{else if isJSON}}
+					<i class="fa fa-file-code-o" aria-hidden="true"></i>
+				{{else}}
+					<i class="fa fa-file-o" aria-hidden="true"></i>
+				{{/if}}
+			</div>
+		</td>
+		<td>
+			<div class="text">{{name}}<br><small>{{bytesToKb size}} kb</small></div>
+		</td>
+		<td>
+			<a href="" class="delete" id="deleteFile"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+		</td>
+		<!-- <td>
+			<i class="fa fa-eye" id="show-file" aria-hidden="true"></i>
+		</td> -->
+		<td>
+			<a href="{{link}}?download=true" id="downloadFile" download="{{name}}" target="_parent" type="{{type}}"><i class="fa fa-download" aria-hidden="true"></i></a>
+		</td>
+	</tr>
+</template>

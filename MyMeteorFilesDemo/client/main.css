@@ -1,0 +1,439 @@
+/* CSS declarations go here */
+
+.invisible {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+/*.outer-wrap{
+	width:100%;
+	height:100%;
+	display:table;
+}
+
+.inner-wrap{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.upload-page {
+	padding: 2% 0 0;
+	margin: auto;
+  max-width: 768px;
+  display: table;
+  width: 100%;
+  position: relative;
+}
+
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 35px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+*/
+
+.full-height {
+	min-height: 100%;
+	min-height: 100vh;
+}
+
+.main-container {
+	display: table;
+	width: 100%;
+}
+
+.main-container .main-row {
+	min-height: 100%;
+	width: 100%;
+}
+
+.main-container .main-row .main-cell {
+	display: table-cell;
+	min-height: 100%;
+	width: 100%;
+	vertical-align: middle;
+}
+
+.col-50 {
+	display: table-cell;
+	width: 50%;
+	max-width: 50%;
+	min-height: 455px;
+	max-height: 455px;
+	height: 455px;
+	vertical-align: middle;
+	position: relative;
+}
+
+.upload-form {
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*.bg-diagonal, .upload-form {
+	background: -webkit-linear-gradient(45deg, #080c15 0%, #1c222e 100%);
+	background: linear-gradient(45deg, #080c15 0%, #1c222e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#080c15', endColorstr='#1c222e', GradientType=1);
+}*/
+
+.upload-form .sm-row {
+	width: 85%;
+	margin: 0px auto;
+}
+
+.upload-form .fake-upload {
+	cursor: pointer;
+	-webkit-transition: color 256ms ease-in-out;
+	transition: color 256ms ease-in-out;
+	width: 85%;
+	margin: 0px auto;
+}
+
+/*div#fakeUpload:hover{
+	color: #BBBBBB;
+}*/
+
+.upload-form i.fa.fa-cloud-upload {
+	font-size: 4rem;
+}
+
+.upload-form h2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+/*.container-main {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}*/
+
+/*.container {
+	margin: 0px auto;
+	max-width: 768px;
+	width: 100%;
+	position: relative;
+	display: table;
+	padding-right: 0px;
+	padding-left: 0px;
+}*/
+
+._loading {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.files-note {
+	text-align: center;
+}
+
+/*a#deleteFile {
+	color: red;
+}*/
+
+a {
+	cursor: pointer;
+	color: #aebad2;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #aebad2;
+}
+
+.preview-circle {
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 40px;
+	border: 2px solid #9ca8be;
+	box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.25);
+	position: relative;
+}
+
+.preview-circle i {
+	font-size: 20px;
+	line-height: 0px;
+	margin-top: 18px;
+}
+
+.preview-circle img {
+	width: 36px;
+	height: 36px;
+	border-radius: 40px;
+}
+
+.listing, .file, ._loading {
+	width: 100%;
+	color: #aebad2;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	max-height: 455px;
+	min-height: 455px;
+}
+
+/*.bg-horizontal, .listing, .file, ._loading, ._404 {
+	background: -webkit-linear-gradient(left, #222938 0%, #212834 100%);
+	background: linear-gradient(to right, #222938 0%, #212834 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#222938', endColorstr='#212834', GradientType=1);
+}*/
+
+.table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;
+}
+
+.table > tbody > tr {
+	border-bottom: 1px solid #1a2333;
+}
+
+.row {
+	display: table-row;
+	width: 100%;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: none;
+}
+
+.upload-form.file-over {
+  cursor: copy;
+  background-color: #121722;
+  background-image: url(/dnd.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 80px 80px;
+}
+
+.upload-form.file-over * {
+  display: none;
+}
+
+.file {
+  width: 100%;
+  max-width: 384px;
+  color: #aebad2;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 455px;
+  min-height: 455px;
+}
+
+.file::-webkit-scrollbar {
+  display: none;
+}
+.file {
+  display: block;
+}
+.file .file-table {
+  display: table;
+  width: 100%;
+  min-height: 455px;
+  height: 100%;
+}
+.file .file-table .file-row {
+  display: table-row;
+  width: 100%;
+  height: 100%;
+}
+.file .file-table .file-row .file-cell {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+.file .file-preview {
+  margin: 0 auto;
+}
+.file picture.file-preview {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+.file img {
+  pointer-events: none;
+}
+.file h1.file-title {
+  top: 0px;
+  left: 0px;
+  -webkit-backdrop-filter: blur(2px);
+  -moz-backdrop-filter: blur(2px);
+  -ms-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  margin: 0px;
+  padding: 7px 0px;
+  z-index: 100;
+  padding-left: 30px;
+  padding-right: 10px;
+  max-width: 100%;
+}
+.file h1.file-title .go-back {
+	color: black;
+  padding: 0px 10px;
+  margin: 0px 0px;
+  display: inline-block;
+  height: 100%;
+  text-decoration: none;
+  font-size: 2.2rem;
+  line-height: 3rem;
+  position: absolute;
+  left: 0px;
+  font-weight: 700;
+}
+
+/*.file h1.file-title .go-back:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.25);
+}*/
+
+.file .info-link {
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: color 256ms ease-in-out, background-color 256ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.555);
+  -webkit-backdrop-filter: blur(3px);
+  -moz-backdrop-filter: blur(3px);
+  -ms-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+.file .info-link:not(.right) {
+  right: 0px;
+}
+.file .info-link.right {
+  left: 0px;
+}
+.file .info-link:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+.scroll {
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.scroll-x {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.file-preview {
+  margin: 0 auto;
+  max-width: 100%;
+  display: block;
+}
+.file-preview .file-audio {
+  margin: 25px 0px;
+}
+.no-margin{
+  margin: 0px !important;
+}
+
+.no-padding{
+  padding: 0px !important;
+}
+.no-radius{
+  border-radius: 0px;
+}
+iframe.file-preview{
+  border: 0;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  vertical-align: baseline;
+  height: 100%;
+  width: 100%;
+}
+.file-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.777);
+  -webkit-backdrop-filter: blur(3px);
+  -moz-backdrop-filter: blur(3px);
+  -ms-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  top: 0px;
+  left: 0px;
+  z-index: 200;
+  width: 70%;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+}
+.file-overlay table {
+  height: 100%;
+  width: 100%;
+}
+.file-overlay table td {
+  vertical-align: middle;
+  text-align: center;
+}
+.file-overlay table.fixed-table {
+  height: auto;
+}
+.file-overlay table.fixed-table td, .file-overlay table.fixed-table th {
+  line-height: 1.4rem;
+  word-break: break-all;
+  padding: 5px 10px;
+  vertical-align: middle;
+}
+.file-overlay table.fixed-table td {
+  text-align: left;
+}
+.file-overlay table.fixed-table th {
+  text-align: right;
+  font-weight: 700;
+}
+.gh-ribbon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: none;
+  z-index: 300;
+}
+.gh-ribbon:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+.gh-ribbon svg {
+  height: 130px;
+  width: 130px;
+  fill: #121722;
+  color: #151513;
+  border: 0;
+}
+.gh-ribbon svg .octo-arm {
+  transform-origin: 130px 106px;
+}
+.gh-ribbon svg .octo-arm, .gh-ribbon svg .octo-body {
+  fill: #2b3850;
+}
+.files-note{
+  text-align: center;
+}
